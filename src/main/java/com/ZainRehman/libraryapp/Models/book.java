@@ -3,12 +3,8 @@ package com.ZainRehman.libraryapp.Models;
 import java.time.LocalDate;
 import java.io.Serializable;
 
-@Entity
-public class book implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class book implements Serializable {
 
     private String name;
     private String description;
@@ -16,7 +12,7 @@ public class book implements Serializable {
     private String endDate;
     private float score;
 
-    public book(){}
+
 
     public book(String name, String description, String startDate, String endDate, float score){
         this.name = name;
