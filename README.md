@@ -1,4 +1,4 @@
-<h1>Library App</h1>h1
+<h1>Library App</h1>
 <h1>https://libraryapp-production-fbd4.up.railway.app</h1>
 
 A simple application built with java and spring boot that allows users to manage their collection of books as well as provide details such as the date they started, a description and a score.
