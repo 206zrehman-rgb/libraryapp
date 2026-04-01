@@ -8,6 +8,6 @@ public class homeController {
 
     @GetMapping("/")
     public String home() {
-        return "books";
+        return "in the search bar add to the url /books";
     }
 }
