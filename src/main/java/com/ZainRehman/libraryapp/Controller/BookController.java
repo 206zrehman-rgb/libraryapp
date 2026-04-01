@@ -1,30 +1,55 @@
 package com.ZainRehman.libraryapp.Controller;
 
+import com.ZainRehman.libraryapp.BookRepository;
 import com.ZainRehman.libraryapp.Models.book;
 import com.ZainRehman.libraryapp.Service.BookManager;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+//
+//@RestController
+//public class BookController {
+//
+//    private BookManager manager = new BookManager();
+//
+//
+//
+//    @GetMapping("/books")
+//    public ArrayList<book> getBooks() {
+//        return manager.getLibrary();
+//    }
+//
+//    @PostMapping("/createBook")
+//    public void createBook(@RequestBody book newBook){
+//        manager.addBook(newBook);
+//    }
+//
+//    @DeleteMapping("/books/{name}")
+//    public void deleteBook(@PathVariable String name){
+//        manager.removeBook(name);
+//    }
+//
+//}
 
 @RestController
 public class BookController {
 
-    private BookManager manager = new BookManager();
+    @Autowired
+    private BookRepository repo;
 
     @GetMapping("/books")
-    public ArrayList<book> getBooks() {
-        return manager.getLibrary();
+    public List<book> getBooks() {
+        return repo.findAll();
     }
 
     @PostMapping("/createBook")
-    public void createBook(@RequestBody book newBook){
-        manager.addBook(newBook);
+    public book createBook(@RequestBody book newBook){
+        return repo.save(newBook);
     }
 
-    @DeleteMapping("/books/{name}")
-    public void deleteBook(@PathVariable String name){
-        manager.removeBook(name);
+    @DeleteMapping("/books/{id}")
+    public void deleteBook(@PathVariable Long id){
+        repo.deleteById(id);
     }
-
 }
