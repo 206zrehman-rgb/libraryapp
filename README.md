@@ -11,7 +11,7 @@ Rest API
 Railway
 
 
-<h2>createBook</h2>
+<h2>/createBook</h2>
 this allows a book to be added to the arraylist
 Example request body:
 {
@@ -23,7 +23,7 @@ Example request body:
 }
 
 
-<h2>books</h2>
+<h2>/books</h2>
 Get request showing all the books in the array
 
 
